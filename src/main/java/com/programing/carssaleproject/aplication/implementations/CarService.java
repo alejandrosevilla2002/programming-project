@@ -1,6 +1,6 @@
 package com.programing.carssaleproject.aplication.implementations;
 
-import com.programing.carssaleproject.aplication.exceptions.SubsidiaryNotFoundException;
+import com.programing.carssaleproject.aplication.exceptions.EntityNotFoundException;
 import com.programing.carssaleproject.domain.abstractions.dtos.CarCreationRequest;
 import com.programing.carssaleproject.domain.abstractions.repositories.ICarRepository;
 import com.programing.carssaleproject.domain.abstractions.repositories.ISubsidiaryRepository;
@@ -33,7 +33,7 @@ public class CarService implements ICarService {
             car.setSubsidiary(subsidiary.get());
             return carRepository.save(car);
         } else {
-            throw new SubsidiaryNotFoundException("Subsidiary not found for ID: " + carDTO.getSubsidiaryId());
+            throw new EntityNotFoundException("Subsidiary not found for ID: " + carDTO.getSubsidiaryId());
         }
     }
 

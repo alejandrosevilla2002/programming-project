@@ -25,11 +25,16 @@ public class Subsidiary {
     @JoinColumn(name = "country_id")
     private Country country;
 
-    public Subsidiary(String name, double taxRate, List<CarStyle> carStyleList, List<Car> cars) {
+    @Column(name = "country_id", insertable = false, updatable = false)
+    private Long countryId;
+
+    public Subsidiary(String name, double taxRate, List<CarStyle> carStyleList, List<Car> cars, Country country, Long countryId) {
         this.name = name;
         this.taxRate = taxRate;
         this.carStyleList = carStyleList;
         this.cars = cars;
+        this.country = country;
+        this.countryId = countryId;
     }
 
     public Subsidiary() {
@@ -60,6 +65,14 @@ public class Subsidiary {
         this.taxRate = taxRate;
     }
 
+    public List<CarStyle> getCarStyleList() {
+        return carStyleList;
+    }
+
+    public void setCarStyleList(List<CarStyle> carStyleList) {
+        this.carStyleList = carStyleList;
+    }
+
     public List<Car> getCars() {
         return cars;
     }
@@ -68,11 +81,19 @@ public class Subsidiary {
         this.cars = cars;
     }
 
-    public List<CarStyle> getCarStyleList() {
-        return carStyleList;
+    public Country getCountry() {
+        return country;
     }
 
-    public void setCarStyleList(List<CarStyle> carStyleList) {
-        this.carStyleList = carStyleList;
+    public void setCountry(Country country) {
+        this.country = country;
+    }
+
+    public Long getCountryId() {
+        return countryId;
+    }
+
+    public void setCountryId(Long countryId) {
+        this.countryId = countryId;
     }
 }

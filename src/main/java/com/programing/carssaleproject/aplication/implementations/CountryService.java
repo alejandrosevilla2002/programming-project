@@ -23,8 +23,8 @@ public class CountryService implements ICountryService {
     public Country createCountry(CountryCreationRequest countryRequest) {
         try {
             verifyDuplicateCountryName(countryRequest.getName());
-            var subsidiary = modelMapper.map(countryRequest, Country.class);
-            return countryRepository.save(subsidiary);
+            var country = modelMapper.map(countryRequest, Country.class);
+            return countryRepository.save(country);
         } catch (DuplicatedCountryNameException e) {
             throw new RuntimeException(e);
         }

@@ -23,11 +23,24 @@ public class Country {
 
     }
 
-    public Country(String name, String region, String localMoneyName, double exchangeWithDollar) {
+    public Country(String name, String region, String localMoneyName, double exchangeWithDollar, List<Subsidiary> subsidiaries) {
         this.name = name;
         this.region = region;
         this.localMoneyName = localMoneyName;
         this.exchangeWithDollar = exchangeWithDollar;
+        this.subsidiaries = subsidiaries;
+    }
+
+    public void setExchangeWithDollar(double exchangeWithDollar) {
+        this.exchangeWithDollar = exchangeWithDollar;
+    }
+
+    public List<Subsidiary> getSubsidiaries() {
+        return subsidiaries;
+    }
+
+    public void setSubsidiaries(List<Subsidiary> subsidiaries) {
+        this.subsidiaries = subsidiaries;
     }
 
     public void setId(Long id) {

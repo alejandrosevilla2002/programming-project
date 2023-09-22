@@ -4,10 +4,18 @@ import java.util.List;
 
 public class SubsidiaryCreationRequest {
     private String name;
-    private String location;
-    private String country;
     private double taxRate;
+
+    private long countryId;
     private List<String> carStyleList;
+
+    public long getCountryId() {
+        return countryId;
+    }
+
+    public void setCountryId(long countryId) {
+        this.countryId = countryId;
+    }
 
     public String getName() {
         return name;
@@ -15,22 +23,6 @@ public class SubsidiaryCreationRequest {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public String getLocation() {
-        return location;
-    }
-
-    public void setLocation(String location) {
-        this.location = location;
-    }
-
-    public String getCountry() {
-        return country;
-    }
-
-    public void setCountry(String country) {
-        this.country = country;
     }
 
     public double getTaxRate() {

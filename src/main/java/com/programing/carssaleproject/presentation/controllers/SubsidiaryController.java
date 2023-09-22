@@ -3,10 +3,12 @@ package com.programing.carssaleproject.presentation.controllers;
 import com.programing.carssaleproject.domain.abstractions.dtos.SubsidiaryCreationRequest;
 import com.programing.carssaleproject.domain.abstractions.services.ISubsidiaryService;
 import com.programing.carssaleproject.domain.model.Subsidiary;
+import com.programing.carssaleproject.presentation.dto.SubsidiaryDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.modelmapper.ModelMapper;
 
 import java.util.List;
 
@@ -16,6 +18,8 @@ public class SubsidiaryController {
 
     @Autowired
     private ISubsidiaryService subsidiaryService;
+    @Autowired
+    private ModelMapper modelMapper;
 
     @PostMapping
     public ResponseEntity<Subsidiary> createSubsidiary(@RequestBody SubsidiaryCreationRequest subRequest) {
