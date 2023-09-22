@@ -1,0 +1,11 @@
+version: '3.8'
+services:
+  postgres:
+    image: postgres
+    container_name: my_postgres_database
+    environment:
+      POSTGRES_DB: cars-sale
+      POSTGRES_USER: Admin
+      POSTGRES_PASSWORD: Admin
+    ports:
+      - "5432:5432"
